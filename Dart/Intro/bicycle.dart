@@ -6,9 +6,6 @@ class Bicycle {
 
   Bicycle(this.cadence, this.gear);
 
-  @override
-  String toString() => 'Bicycle: $_speed mph';
-
   void applyBrake(int decrement) {
     _speed -= decrement;
   }
@@ -16,10 +13,16 @@ class Bicycle {
   void speedUp(int increment) {
     _speed += increment;
   }
+
+  @override
+  String toString() => 'Bicycle: $_speed mph';
 }
 
 void main() {
-  var bike = Bicycle(2, 1);
+  //var bike = Bicycle(2, 1);
+  Bicycle bike = Bicycle(2, 2);
+  bike.speedUp(90);
+  bike.applyBrake(10);
   print(bike);
 }
 
